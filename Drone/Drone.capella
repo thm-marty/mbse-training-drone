@@ -13,6 +13,7 @@
     xmlns:org.polarsys.capella.core.data.information="http://www.polarsys.org/capella/core/information/6.0.0"
     xmlns:org.polarsys.capella.core.data.information.datatype="http://www.polarsys.org/capella/core/information/datatype/6.0.0"
     xmlns:org.polarsys.capella.core.data.information.datavalue="http://www.polarsys.org/capella/core/information/datavalue/6.0.0"
+    xmlns:org.polarsys.capella.core.data.interaction="http://www.polarsys.org/capella/core/interaction/6.0.0"
     xmlns:org.polarsys.capella.core.data.la="http://www.polarsys.org/capella/core/la/6.0.0"
     xmlns:org.polarsys.capella.core.data.oa="http://www.polarsys.org/capella/core/oa/6.0.0"
     xmlns:org.polarsys.capella.core.data.pa="http://www.polarsys.org/capella/core/pa/6.0.0"
@@ -46,7 +47,37 @@
             id="d7c7edb1-aaaf-481c-996d-1ab0e938bc72" name="Root Operational Activity"/>
       </ownedFunctionPkg>
       <ownedAbstractCapabilityPkg xsi:type="org.polarsys.capella.core.data.oa:OperationalCapabilityPkg"
-          id="fdad75db-b988-4779-893a-9aabc66798aa" name="Operational Capabilities"/>
+          id="fdad75db-b988-4779-893a-9aabc66798aa" name="Operational Capabilities">
+        <ownedOperationalCapabilities xsi:type="org.polarsys.capella.core.data.oa:OperationalCapability"
+            id="f2579009-0fd7-4f8a-861a-98e2ef3077c2" name="Livrer un colis">
+          <ownedEntityOperationalCapabilityInvolvements xsi:type="org.polarsys.capella.core.data.oa:EntityOperationalCapabilityInvolvement"
+              id="0b6ba4ca-7e33-4d77-8cb3-6a8c459787ef" involved="#41bd5a87-e5ca-450b-a5b7-4c3d42e57854"/>
+          <ownedEntityOperationalCapabilityInvolvements xsi:type="org.polarsys.capella.core.data.oa:EntityOperationalCapabilityInvolvement"
+              id="01a9cf4f-4f89-4c7a-ad74-6a3adff04d6b" involved="#e2abcb88-9fba-4986-8984-d022ea30dadf"/>
+          <ownedEntityOperationalCapabilityInvolvements xsi:type="org.polarsys.capella.core.data.oa:EntityOperationalCapabilityInvolvement"
+              id="0fbf47cb-759b-45ca-9827-d14f99495c3c" involved="#0821c89d-df01-4e07-b92b-1bb7f0fad36b"/>
+          <ownedEntityOperationalCapabilityInvolvements xsi:type="org.polarsys.capella.core.data.oa:EntityOperationalCapabilityInvolvement"
+              id="3f7b9ad8-06a0-47cf-8609-472c1729bce5" involved="#de7e606e-79d0-4082-aa27-a965eedddd4e"/>
+        </ownedOperationalCapabilities>
+        <ownedOperationalCapabilities xsi:type="org.polarsys.capella.core.data.oa:OperationalCapability"
+            id="c60b1c38-fccd-4223-a1e3-3d3d457aaf47" name="Assurer la sécurité">
+          <includes xsi:type="org.polarsys.capella.core.data.interaction:AbstractCapabilityInclude"
+              id="62343804-d377-4934-a237-de938031de61" included="#f2579009-0fd7-4f8a-861a-98e2ef3077c2"/>
+          <ownedEntityOperationalCapabilityInvolvements xsi:type="org.polarsys.capella.core.data.oa:EntityOperationalCapabilityInvolvement"
+              id="4450c20e-c452-4596-8343-0296b5854140" involved="#d6b6a988-9d9c-4ed5-8059-e816461603e0"/>
+          <ownedEntityOperationalCapabilityInvolvements xsi:type="org.polarsys.capella.core.data.oa:EntityOperationalCapabilityInvolvement"
+              id="c1e3561c-e340-4283-8ec0-2c99ed855d24" involved="#92939739-20f2-4633-aaf7-769212218bed"/>
+        </ownedOperationalCapabilities>
+        <ownedOperationalCapabilities xsi:type="org.polarsys.capella.core.data.oa:OperationalCapability"
+            id="5899ef5b-974a-4264-86ed-d6393ffc5cb9" name="Assurer la continuité de service">
+          <includes xsi:type="org.polarsys.capella.core.data.interaction:AbstractCapabilityInclude"
+              id="297c1937-6682-4310-9bf5-3875b7f57de6" included="#f2579009-0fd7-4f8a-861a-98e2ef3077c2"/>
+          <ownedEntityOperationalCapabilityInvolvements xsi:type="org.polarsys.capella.core.data.oa:EntityOperationalCapabilityInvolvement"
+              id="2eb33ba3-2b70-4825-aff6-55c30d99d183" involved="#92939739-20f2-4633-aaf7-769212218bed"/>
+          <ownedEntityOperationalCapabilityInvolvements xsi:type="org.polarsys.capella.core.data.oa:EntityOperationalCapabilityInvolvement"
+              id="949775d0-943f-45a9-9d33-aed6fcda7543" involved="#e2abcb88-9fba-4986-8984-d022ea30dadf"/>
+        </ownedOperationalCapabilities>
+      </ownedAbstractCapabilityPkg>
       <ownedInterfacePkg xsi:type="org.polarsys.capella.core.data.cs:InterfacePkg"
           id="2fbbfd83-9965-4c7a-abe7-5c993e9f2908" name="Interfaces"/>
       <ownedDataPkg xsi:type="org.polarsys.capella.core.data.information:DataPkg"
@@ -55,10 +86,30 @@
           name="Roles"/>
       <ownedEntityPkg xsi:type="org.polarsys.capella.core.data.oa:EntityPkg" id="3ca25794-a148-4b3b-a7eb-5a9f485539e9"
           name="Operational Entities">
-        <ownedParts xsi:type="org.polarsys.capella.core.data.cs:Part" id="ddfc11fa-f0ae-4745-af65-894edf01416f"
-            name="OA 1" abstractType="#b16c2a25-e868-4aba-b95e-529d233a15a6"/>
-        <ownedEntities xsi:type="org.polarsys.capella.core.data.oa:Entity" id="b16c2a25-e868-4aba-b95e-529d233a15a6"
-            name="OA 1" actor="true" human="true"/>
+        <ownedParts xsi:type="org.polarsys.capella.core.data.cs:Part" id="6a2ad2cf-6432-4db4-bfb1-7ff35458a3c7"
+            name="Destinataire" abstractType="#41bd5a87-e5ca-450b-a5b7-4c3d42e57854"/>
+        <ownedParts xsi:type="org.polarsys.capella.core.data.cs:Part" id="23d6b30e-2a2d-4320-8bcf-8b91009b94fa"
+            name="Expéditeur" abstractType="#e2abcb88-9fba-4986-8984-d022ea30dadf"/>
+        <ownedParts xsi:type="org.polarsys.capella.core.data.cs:Part" id="42e709fa-9519-4cd5-ab6e-da2a5c615ce7"
+            name="Livreur" abstractType="#92939739-20f2-4633-aaf7-769212218bed"/>
+        <ownedParts xsi:type="org.polarsys.capella.core.data.cs:Part" id="81865f88-5fb9-43cb-b3b2-a9314ed14bc9"
+            name="Banque" abstractType="#0821c89d-df01-4e07-b92b-1bb7f0fad36b"/>
+        <ownedParts xsi:type="org.polarsys.capella.core.data.cs:Part" id="c9883936-4eb7-458f-9049-b6a921dc4b7b"
+            name="Authorités Aériennes" abstractType="#d6b6a988-9d9c-4ed5-8059-e816461603e0"/>
+        <ownedParts xsi:type="org.polarsys.capella.core.data.cs:Part" id="8c308e2d-32dc-4160-9f38-691ed7c4c1e0"
+            name="Fournisseur d'énergie" abstractType="#de7e606e-79d0-4082-aa27-a965eedddd4e"/>
+        <ownedEntities xsi:type="org.polarsys.capella.core.data.oa:Entity" id="41bd5a87-e5ca-450b-a5b7-4c3d42e57854"
+            name="Destinataire" actor="true" human="true"/>
+        <ownedEntities xsi:type="org.polarsys.capella.core.data.oa:Entity" id="e2abcb88-9fba-4986-8984-d022ea30dadf"
+            name="Expéditeur" actor="true" human="true"/>
+        <ownedEntities xsi:type="org.polarsys.capella.core.data.oa:Entity" id="92939739-20f2-4633-aaf7-769212218bed"
+            name="Livreur" actor="true" human="true"/>
+        <ownedEntities xsi:type="org.polarsys.capella.core.data.oa:Entity" id="0821c89d-df01-4e07-b92b-1bb7f0fad36b"
+            name="Banque" actor="true" human="true"/>
+        <ownedEntities xsi:type="org.polarsys.capella.core.data.oa:Entity" id="d6b6a988-9d9c-4ed5-8059-e816461603e0"
+            name="Authorités Aériennes" actor="true" human="true"/>
+        <ownedEntities xsi:type="org.polarsys.capella.core.data.oa:Entity" id="de7e606e-79d0-4082-aa27-a965eedddd4e"
+            name="Fournisseur d'énergie" actor="true" human="true"/>
       </ownedEntityPkg>
     </ownedArchitectures>
     <ownedArchitectures xsi:type="org.polarsys.capella.core.data.ctx:SystemAnalysis"
